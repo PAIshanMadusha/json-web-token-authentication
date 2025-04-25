@@ -1,0 +1,75 @@
+# ============================
+# General
+# ============================
+.DS_Store
+.vscode/
+*.log
+*.swp
+
+# ============================
+# Flutter (flutter_client)
+# ============================
+
+# Dart/Pub related
+flutter_client/.dart_tool/
+flutter_client/.packages
+flutter_client/.flutter-plugins
+flutter_client/.flutter-plugins-dependencies
+flutter_client/.metadata
+flutter_client/pubspec.lock
+
+# Flutter build output
+flutter_client/build/
+flutter_client/.idea/
+flutter_client/.pub-cache/
+flutter_client/.pub/
+flutter_client/doc/api/
+flutter_client/ios/Flutter/.last_build_id
+
+# Obfuscation/Symbolication
+flutter_client/app.*.symbols
+flutter_client/app.*.map.json
+
+# Android Studio artifacts
+flutter_client/android/app/debug/
+flutter_client/android/app/profile/
+flutter_client/android/app/release/
+
+# ============================
+# Node.js (node_backend)
+# ============================
+
+# Dependencies
+node_backend/node_modules/
+
+# Environment variables
+node_backend/.env
+
+# Logs
+node_backend/npm-debug.log*
+node_backend/yarn-debug.log*
+node_backend/yarn-error.log*
+
+# Runtime
+node_backend/pids
+node_backend/*.pid
+node_backend/*.seed
+node_backend/*.pid.lock
+
+# Coverage
+node_backend/coverage/
+
+# Optional npm cache directory
+node_backend/.npm
+
+# ============================
+# OS/System-specific
+# ============================
+
+# macOS
+*.DS_Store
+
+# Windows
+Thumbs.db
+ehthumbs.db
+desktop.ini
