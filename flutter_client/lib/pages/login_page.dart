@@ -51,6 +51,10 @@ class _LoginPageState extends State<LoginPage> {
             context,
           ).showSnackBar(SnackBar(content: Text("Login Unsuccessfully!")));
         }
+      }finally{
+        setState(() {
+          isLoading = false;
+        });
       }
     }
   }
