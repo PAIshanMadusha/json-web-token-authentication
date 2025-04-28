@@ -16,21 +16,28 @@ class CustomButton extends StatelessWidget {
   Widget build(BuildContext context) {
     return SizedBox(
       width: double.infinity,
+      height: MediaQuery.of(context).size.height * 0.06,
       child:
           isLoading
               ? Center(
-                child: const CircularProgressIndicator(
-                  color: Colors.pinkAccent,
-                ),
+                child: const CircularProgressIndicator(color: Colors.white),
               )
               : ElevatedButton(
                 onPressed: onPressed,
                 style: ElevatedButton.styleFrom(
+                  backgroundColor: Colors.pinkAccent,
                   shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.circular(10),
                   ),
                 ),
-                child: Text(labelText),
+                child: Text(
+                  labelText,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontWeight: FontWeight.bold,
+                    fontSize: 20,
+                  ),
+                ),
               ),
     );
   }

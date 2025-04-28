@@ -51,7 +51,7 @@ class _LoginPageState extends State<LoginPage> {
             context,
           ).showSnackBar(SnackBar(content: Text("Login Unsuccessfully!")));
         }
-      }finally{
+      } finally {
         setState(() {
           isLoading = false;
         });
@@ -61,8 +61,20 @@ class _LoginPageState extends State<LoginPage> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
+
     return Scaffold(
-      appBar: AppBar(),
+      appBar: AppBar(
+        automaticallyImplyLeading: false,
+        leading: IconButton(
+          onPressed: () {
+            Navigator.pop(context);
+          },
+          icon: Icon(Icons.arrow_back_ios),
+          iconSize: 35,
+          color: Colors.white,
+        ),
+      ),
       body: SingleChildScrollView(
         child: Padding(
           padding: EdgeInsets.all(16),
@@ -73,22 +85,30 @@ class _LoginPageState extends State<LoginPage> {
                 Text(
                   "Hello Again!",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 45,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: size.height * 0.02),
                 Text(
-                  "Hello Again! Description",
+                  "Log in to the system, please enter your valid credentials.",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 18,
+                    fontWeight: FontWeight.w200,
+                    color: Colors.white,
+                  ),
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: size.height * 0.05),
                 SvgPicture.asset(
                   "assets/undrawlogin.svg",
-                  width: MediaQuery.of(context).size.width * 0.2,
-                  height: MediaQuery.of(context).size.height * 0.2,
+                  width: MediaQuery.of(context).size.width * 0.25,
+                  height: MediaQuery.of(context).size.height * 0.25,
                   fit: BoxFit.cover,
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: size.height * 0.05),
                 CustomInputField(
                   controller: _emailController,
                   hintText: "Your Email",
@@ -102,7 +122,7 @@ class _LoginPageState extends State<LoginPage> {
                     return null;
                   },
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: size.height * 0.02),
                 CustomInputField(
                   controller: _passwordController,
                   hintText: "Your Password",
@@ -114,19 +134,29 @@ class _LoginPageState extends State<LoginPage> {
                     return null;
                   },
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: size.height * 0.02),
                 CustomButton(
                   isLoading: isLoading,
                   onPressed: login,
                   labelText: "Login",
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: size.height * 0.07),
                 Text.rich(
                   TextSpan(
                     text: "Don't have an Account, ",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                     children: [
                       TextSpan(
                         text: "Register Here",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.pinkAccent,
+                        ),
                         recognizer:
                             TapGestureRecognizer()
                               ..onTap = () {

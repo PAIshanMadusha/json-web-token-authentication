@@ -21,11 +21,24 @@ class CustomInputField extends StatelessWidget {
       obscureText: obscureText,
       decoration: InputDecoration(
         hintText: hintText,
+        hintStyle: TextStyle(color: Colors.grey),
+        filled: true,
+        contentPadding: EdgeInsets.symmetric(horizontal: 24, vertical: 28),
         enabledBorder: OutlineInputBorder(
-          borderRadius: BorderRadius.circular(16)
+          borderRadius: BorderRadius.circular(15),
+        ),
+        focusedBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
+        ),
+        errorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(15),
+          borderSide: BorderSide(color: Colors.pinkAccent)
+        ),
+        focusedErrorBorder: OutlineInputBorder(
+          borderRadius: BorderRadius.circular(20),
         ),
       ),
-      cursorColor: Colors.blue,
+      cursorColor: Colors.pinkAccent,
       validator: validator,
     );
   }
