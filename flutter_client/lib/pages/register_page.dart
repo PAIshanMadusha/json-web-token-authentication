@@ -63,6 +63,7 @@ class _RegisterPageState extends State<RegisterPage> {
 
   @override
   Widget build(BuildContext context) {
+    Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
         automaticallyImplyLeading: false,
@@ -83,23 +84,32 @@ class _RegisterPageState extends State<RegisterPage> {
             child: Column(
               children: [
                 Text(
-                  "Hello Again!",
+                  "Welcome, New User!",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 25, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 45,
+                    fontWeight: FontWeight.bold,
+                    color: Colors.white,
+                  ),
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: size.height * 0.02),
                 Text(
-                  "Hello Again! Description",
+                  "To register to the system, Enter Your Details and Create a new Account",
                   textAlign: TextAlign.center,
-                  style: TextStyle(fontSize: 20, fontWeight: FontWeight.bold),
+                  style: TextStyle(
+                    fontSize: 16,
+                    fontWeight: FontWeight.w200,
+                    color: Colors.white,
+                  ),
                 ),
+                SizedBox(height: size.height * 0.05),
                 SvgPicture.asset(
                   "assets/undrawregister.svg",
-                  width: MediaQuery.of(context).size.width * 0.2,
-                  height: MediaQuery.of(context).size.height * 0.2,
+                  width: MediaQuery.of(context).size.width * 0.25,
+                  height: MediaQuery.of(context).size.height * 0.25,
                   fit: BoxFit.cover,
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: size.height * 0.05),
                 CustomInputField(
                   controller: _userNameController,
                   hintText: "Your Name",
@@ -110,7 +120,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     return null;
                   },
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: size.height * 0.02),
                 CustomInputField(
                   controller: _emailController,
                   hintText: "Your Email",
@@ -124,7 +134,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     return null;
                   },
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: size.height * 0.02),
                 CustomInputField(
                   controller: _passwordController,
                   hintText: "Your Password",
@@ -139,7 +149,7 @@ class _RegisterPageState extends State<RegisterPage> {
                     return null;
                   },
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: size.height * 0.02),
                 CustomInputField(
                   controller: _confirmPasswordController,
                   hintText: "Confirm Your Password",
@@ -154,19 +164,29 @@ class _RegisterPageState extends State<RegisterPage> {
                     return null;
                   },
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: size.height * 0.02),
                 CustomButton(
                   isLoading: isLoading,
                   onPressed: register,
                   labelText: "Register",
                 ),
-                SizedBox(height: 15),
+                SizedBox(height: size.height * 0.07),
                 Text.rich(
                   TextSpan(
                     text: "Already have an Account? ",
+                    style: TextStyle(
+                      fontSize: 15,
+                      fontWeight: FontWeight.bold,
+                      color: Colors.white,
+                    ),
                     children: [
                       TextSpan(
                         text: "Login Here",
+                        style: TextStyle(
+                          fontSize: 15,
+                          fontWeight: FontWeight.bold,
+                          color: Colors.pinkAccent,
+                        ),
                         recognizer:
                             TapGestureRecognizer()
                               ..onTap = () {

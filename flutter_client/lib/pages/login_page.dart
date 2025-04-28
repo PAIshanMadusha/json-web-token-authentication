@@ -96,7 +96,7 @@ class _LoginPageState extends State<LoginPage> {
                   "Log in to the system, please enter your valid credentials.",
                   textAlign: TextAlign.center,
                   style: TextStyle(
-                    fontSize: 18,
+                    fontSize: 16,
                     fontWeight: FontWeight.w200,
                     color: Colors.white,
                   ),
