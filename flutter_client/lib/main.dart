@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_client/pages/authentication_home_page.dart';
 import 'package:flutter_client/pages/login_page.dart';
 import 'package:flutter_client/pages/main_page.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -20,7 +21,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         fontFamily: GoogleFonts.poppins().fontFamily,
       ),
-      home: CheckAuthenticationStatus(),
+      home: AuthenticationHomePage(),
     );
   }
 }
