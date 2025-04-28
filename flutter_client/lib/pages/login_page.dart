@@ -104,8 +104,8 @@ class _LoginPageState extends State<LoginPage> {
                 SizedBox(height: size.height * 0.05),
                 SvgPicture.asset(
                   "assets/undrawlogin.svg",
-                  width: MediaQuery.of(context).size.width * 0.25,
-                  height: MediaQuery.of(context).size.height * 0.25,
+                  width: size.width * 0.25,
+                  height: size.height * 0.25,
                   fit: BoxFit.cover,
                 ),
                 SizedBox(height: size.height * 0.05),
