@@ -24,9 +24,19 @@ class _MainPageState extends State<MainPage> {
     try {
       await _authenticationService.logout();
       if (mounted) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text("Logout Successfully!")));
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: Colors.pinkAccent,
+            content: Text(
+              "Logout Successfully!",
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        );
         Navigator.pushReplacement(
           context,
           MaterialPageRoute(builder: (context) => AuthenticationHomePage()),
@@ -35,10 +45,24 @@ class _MainPageState extends State<MainPage> {
     } catch (error) {
       debugPrint("Error when Logout: $error");
       if (mounted) {
-        ScaffoldMessenger.of(
-          context,
-        ).showSnackBar(SnackBar(content: Text("Logout Unsuccessfully!")));
+        ScaffoldMessenger.of(context).showSnackBar(
+          SnackBar(
+            backgroundColor: Colors.red,
+            content: Text(
+              "Logout Unsuccessfully!",
+              style: TextStyle(
+                fontSize: 15,
+                fontWeight: FontWeight.bold,
+                color: Colors.white,
+              ),
+            ),
+          ),
+        );
       }
+    }finally{
+      setState(() {
+        isLoading = false;
+      });
     }
   }
 

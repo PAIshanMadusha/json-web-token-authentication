@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_client/pages/authentication_home_page.dart';
-import 'package:flutter_client/pages/login_page.dart';
 import 'package:flutter_client/pages/main_page.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:shared_preferences/shared_preferences.dart';
@@ -21,7 +20,7 @@ class MyApp extends StatelessWidget {
         brightness: Brightness.dark,
         fontFamily: GoogleFonts.poppins().fontFamily,
       ),
-      home: AuthenticationHomePage(),
+      home: CheckAuthenticationStatus(),
     );
   }
 }
@@ -55,6 +54,6 @@ class _CheckAuthenticationStatusState extends State<CheckAuthenticationStatus> {
 
   @override
   Widget build(BuildContext context) {
-    return isLoggedIn ? MainPage() : LoginPage();
+    return isLoggedIn ? MainPage() : AuthenticationHomePage();
   }
 }

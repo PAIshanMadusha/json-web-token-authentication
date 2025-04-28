@@ -36,9 +36,19 @@ class _LoginPageState extends State<LoginPage> {
           password: _passwordController.text,
         );
         if (mounted) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text("Login Successfully!")));
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              backgroundColor: Colors.pinkAccent,
+              content: Text(
+                "Login Successfully!",
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          );
           Navigator.pushReplacement(
             context,
             MaterialPageRoute(builder: (context) => MainPage()),
@@ -47,9 +57,19 @@ class _LoginPageState extends State<LoginPage> {
       } catch (error) {
         debugPrint("Error when Login: $error");
         if (mounted) {
-          ScaffoldMessenger.of(
-            context,
-          ).showSnackBar(SnackBar(content: Text("Login Unsuccessfully!")));
+          ScaffoldMessenger.of(context).showSnackBar(
+            SnackBar(
+              backgroundColor: Colors.red,
+              content: Text(
+                "Login Unsuccessfully!",
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
+          );
         }
       } finally {
         setState(() {

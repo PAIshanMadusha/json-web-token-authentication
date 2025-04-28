@@ -39,10 +39,21 @@ class _RegisterPageState extends State<RegisterPage> {
           password: _passwordController.text,
         );
         if (mounted) {
-          Navigator.pop(context);
+          Navigator.push(
+            context,
+            MaterialPageRoute(builder: (context) => LoginPage()),
+          );
           ScaffoldMessenger.of(context).showSnackBar(
             SnackBar(
-              content: Text("Registration Successfully, Please Log In!"),
+              backgroundColor: Colors.pinkAccent,
+              content: Text(
+                "Registration Successfully, Please Log In!",
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
             ),
           );
         }
@@ -50,7 +61,17 @@ class _RegisterPageState extends State<RegisterPage> {
         debugPrint("Error when register: $error");
         if (mounted) {
           ScaffoldMessenger.of(context).showSnackBar(
-            SnackBar(content: Text("Registration Unsuccessfully!")),
+            SnackBar(
+              backgroundColor: Colors.red,
+              content: Text(
+                "Registration Unsuccessfully!",
+                style: TextStyle(
+                  fontSize: 15,
+                  fontWeight: FontWeight.bold,
+                  color: Colors.white,
+                ),
+              ),
+            ),
           );
         }
       } finally {
