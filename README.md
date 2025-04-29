@@ -85,7 +85,7 @@ dependencies:
   "nodemon": "^3.1.10"
   }
 ```
-## 📦 Extra Packages:
+### 📦 Extra Packages:
 - **axios**: Installed but not actively used. Needed only if future external API requests are required from the backend.
 
 ---
