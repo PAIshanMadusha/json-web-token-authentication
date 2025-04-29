@@ -6,9 +6,9 @@ A simple **Client-Server Architecture** project built using **Flutter** for the 
 
 ## ✨ Features:
 
-- **📝 User Registration**: (Name, Email, Password, Confirm Password)
-- **✅ Email Validation**: Using Regular Expressions
-- **✅ Password Validation**: (minimum 6 characters)
+- **📝 User Registration**: (Name, Email, Password, Confirm Password).
+- **✅ Email Validation**: Using Regular Expressions.
+- **✅ Password Validation**: (minimum 6 characters).
 - **🔐 Password Hashing**: Passwords are securely hashed using `bcryptjs` before storing in MongoDB.
 - **🔓 Login with Email and Password**: Users can log into the system by entering valid credentials.
 - **🔑 JWT Token Handling**: Token generated on successful login, token saved in `SharedPreferences` for login persistence, and token expiry set to **2 hours**.
